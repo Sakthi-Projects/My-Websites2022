@@ -66,6 +66,7 @@ span{
     font-size: 2rem;
     color: #fff;
     position: relative;
+    cursor: pointer;
 }
 
 .cart-count{
@@ -82,17 +83,72 @@ span{
     line-height: 98%;
 }
 
+.cart-box h3{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.6rem !important;
+    width: 100%;
 
+}
+
+.cart-box-use{
+    width: 350px;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cartBoxActive{
+    transform: translateX(0);
+}
+
+.cart-box-use .cart_close_btn{
+    font-size: 2rem;
+    background: green;
+    color: white;
+}
+.cart-box-use .cart_close_btn:hover{
+      background: rgb(255, 0, 0);
+}
+.cart-box-use .cart_close_btn:active{
+    background: rgb(238, 74, 74);
+}
+
+.cart-box-use .carthead{
+    display: flex;
+    border-bottom: 2px solid rgb(204, 196, 212);
+}
+
+.cart-box-use .carthead .carth2{
+    padding-left: 5rem;
+    color: #a05e03;
+    font-weight: 600;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
 nav ul li{
     transition: 0.2s ease;
     margin-left: 1rem;
 }
+
 nav ul li:hover{
     background: red;
     box-shadow: 2px 2px 5px black;
     border-radius: 0.6rem;
 }
 
+#navbar #nav-tabs .active{
+    background: rgb(245, 0, 0);
+    box-shadow: 2px 2px 5px black;
+    border-radius: 0.6rem;
+}
 
 nav ul li:active{
     box-shadow: none;
@@ -307,6 +363,7 @@ nav ul li:active{
     margin:0.5rem;
     background-image: linear-gradient(to right top, #979797, #b0b0b0, #cacaca, #e4e4e4, #ffffff);
     border-radius: 1rem;
+    cursor: pointer;
 }
 .address-box .icon{
     font-size: 1.3rem;
@@ -328,6 +385,7 @@ nav ul li:active{
     margin-top: 1rem;
     font-size: 2rem;
     color: white;
+    cursor: pointer;
 }
 
 /**************Message**************/
@@ -348,7 +406,7 @@ nav ul li:active{
     padding: 1rem;
     min-height: 300px;
     width: 450px;
-
+    cursor: pointer;
 }
 
 #contact .form-boxs .form-control{
@@ -389,13 +447,14 @@ width: 400px;
     border-radius: 0;
     color: white;
     padding: 1rem;
+    cursor: pointer;
 }
 
 #contact .footer .container ul li a{
     color:white;
     font-size: 0.9rem;
+    transition: 0.25s ease-in;
 }
-
 #contact .footer .container ul li a:hover{
     color: red;
 }
