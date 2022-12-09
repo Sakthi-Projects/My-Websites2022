@@ -10,8 +10,8 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon_io/favicon-32x32.png">
-</head>
-<body>
+  </head>
+<body class="remo">
     <section id="home">
         <div class="container-fluid ">
             <div class="row">
@@ -29,28 +29,32 @@
                             <span class="navbar-toggler-icon"></span>
                           </button>
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                              <li class="nav-item px-3">
-                                <a class="nav-link active text-white" aria-current="page" href="#home">Home</a>
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0" id="nav-tabs">
+                              <li class="nav-item px-3 mt-lg-0 mt-2 mb-lg-0 mb-2 active">
+                                <a class="nav-link text-white" aria-current="page" href="#home">Home</a>
                               </li>
-                              <li class="nav-item px-3">
+                              <li class="nav-item px-3 mb-lg-0 mb-2">
                                 <a class="nav-link text-white" href="#about">About</a>
                               </li>
-                              <li class="nav-item px-3">
+                              <li class="nav-item px-3 mb-lg-0 mb-2">
                                 <a class="nav-link text-white" href="#products">Products</a>
                               </li>
-                              <li class="nav-item px-3">
+                              <li class="nav-item px-3 mb-lg-0 mb-1 ">
                                 <a class="nav-link text-white" href="#contact">Contact</a>
                              </li>
                             </ul>
                           </div>
-                          <div class="cart d-flex mx-sm-5">
+                          <div class="cart d-flex mx-sm-5" id="cart-display" onclick="add()">
                             <ion-icon name="cart"></ion-icon>
                             <div class="cart-count">0</div>
                           </div>
                         </div>
                       </nav>
-                  </div>
+                    </div>
+                    <div class="cart-box-use">
+                      <div class="carthead"><ion-icon name="close-outline" class="cart_close_btn" onclick="remove()"></ion-icon>
+                      <h2 class="carth2">Cart Items</h2></div>
+                    </div>
              <div class="container">
                 <div class="row">
                   <div class="col col-lg-6 col-12 align-self-lg-center pt-lg-0 pt-4" id="left-contend">
@@ -65,6 +69,7 @@
              </div>
         </div>
     </section>
+    </div>
     <section id="about">
       <div class="container">
         <div class="row">
@@ -92,85 +97,82 @@
      </div>
     </section>
     <section id="products">
-      <div class="addtocarts"><p>Cart added Successfully</p>
-        <ion-icon id="btn1" name="close-circle"></ion-icon>
-      </div>
-     <div class="title"><h1>Discover the Honey's</h1></div>
+      <div class="title"><h1>Discover the Honey's</h1></div>
      <div class="container">
       <div class="row">
           <div class="col col-12">
           <div class="shop-contend">
 
-              <div class="honey-box">
+              <div class="honey-box honey0">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon5.png" alt="">
                 </div>
                 <h2 class="nhoney">Ponthu Honey</h2>
                 <h6>Rs. 800  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()"></ion-icon>
               </div>
 
-              <div class="honey-box">
+              <div class="honey-box honey1">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon2.png" alt="">
                 </div>
                 <h2 class="nhoney">Wilds Honey</h2>
                 <h6>Rs. 950  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()"></ion-icon>
               </div>
 
-              <div class="honey-box">
+              <div class="honey-box honey2">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon5.png" alt="">
                 </div>
                 <h2 class="nhoney">Wildflower Honey</h2>
                 <h6>Rs. 820  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()"></ion-icon>
               </div>
 
-              <div class="honey-box">
+              <div class="honey-box honey3">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon2.png" alt="">
                 </div>
                 <h2 class="nhoney">Organic Honey</h2>
                 <h6>Rs. 1000  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()"></ion-icon>
               </div>
 
-              <div class="honey-box">
+              <div class="honey-box honey4">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon5.png" alt="">
                 </div>
                 <h2 class="nhoney">Black Honey</h2>
                 <h6>Rs. 600  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()"></ion-icon>
               </div>
 
-              <div class="honey-box">
+              <div class="honey-box honey5">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon2.png" alt="">
                 </div>
                 <h2 class="nhoney">Alfalfa Honey</h2>
                 <h6>Rs. 900  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()"></ion-icon>
               </div>
 
-              <div class="honey-box">
+              <div class="honey-box honey6">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon5.png" alt="">
                 </div>
                 <h2 class="nhoney">Clover Honey</h2>
                 <h6>Rs. 950  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()"></ion-icon>
               </div>
 
-              <div class="honey-box">
+              <div class="honey-box honey7">
                 <div class="pic">
                   <img class="img-fluid" src="./Images/hon2.png" alt="">
                 </div>
                 <h2 class="nhoney">Hills Honey</h2>
                 <h6>Rs. 400  <span>Per/Kg</span></h6>
-                <ion-icon name="cart" id="cart-btn"></ion-icon>
+                <ion-icon name="cart" id="cart-btn" onclick="counts()">
               </div>
           
           </div>
@@ -271,6 +273,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
   <script>
+
+    //Sticky Navbar---------------------------------------
       const navbar = document.querySelector('#navbar');
       let tops = navbar.offsetTop;
         function stickynavbar() {
@@ -282,7 +286,44 @@
     }
     window.addEventListener('scroll', stickynavbar);
 
-   </script>
+
+
+//Navbar Active Design-----------------------------------
+
+    const navbarTab = document.getElementById("nav-tabs");
+    navbarTab.addEventListener("click", tabfun);
+    function tabfun (event){
+      const tabs = document.querySelectorAll(".active");
+
+      tabs.forEach((now)=>{
+        now.classList.remove('active');
+      });
+
+      event.target.parentElement.classList.add('active');
+    }
+
+
+//Cart Window open------------------------------------------
+
+    function add(){
+       document.querySelector(".cart-box-use").classList.add("cartBoxActive");
+      }
+
+    function remove(){
+      document.querySelector(".cart-box-use").classList.remove("cartBoxActive");
+    }
+
+  //Cart-Count Increase------------------------------------------
+    let count= 1;
+    const cartbtns = document.querySelectorAll("#cart-btn")
+
+    function counts(){
+      if(count >= 0){
+      document.querySelector(".cart-count").textContent = count;
+      count++;
+    }
+    }
+  </script>
 
   
   </body>
