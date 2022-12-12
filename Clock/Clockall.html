@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;0,900;1,500&family=Secular+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family:DS-Digital ;
+    src: url(./Clock/DS-DIGI.TTF);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Poppins;
+    flex-direction: column;
+}
+
+.frame{
+    height: auto;
+    width: 750px;
+    background: #353b48;
+    border: 50px solid #f7b707;
+    box-shadow: inset 4px 4px 10px rgb(12, 12, 12),
+                inset -4px -4px 10px rgb(12, 12, 12);
+    box-shadow: 10px 10px 0px #000208,
+    15px 15px 0px #000102,
+    20px 25px 10px #7a7979;
+    border-radius: 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.days, .month{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days span, .month span{
+    width: 100px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #4f5050;
+}
+
+.days .days-active, .month .month-active{
+    color: #f7b707;
+}
+
+.meridian span{
+    height: 100%;
+    padding: 0.2rem;
+    font-size: 1.3rem;
+    color: #4f5050;
+    display: block;
+}
+.meridian span:nth-child(2){
+    margin-top:2rem ;
+}
+
+.meridian .active{
+    color: #f7b707;
+}
+
+.clock{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: DS-Digital;
+    font-size: 11rem;
+    color: #f7b707;
+}
+
+.frame .clock .num{
+    width: 80px;
+    text-align: right;
+    position: relative;
+}
+
+.num::before{
+    content: "0";
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(148, 147, 153, 0.1);
+}
+
+.colon{
+    width: 80px;
+    text-align: center;
+    animation: blink 0.7s ease-in-out infinite;
+}
+@keyframes blink {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.date{
+    font-weight: 600;
+    font-size: 2rem;
+    color: rgb(255, 0, 0);
+}
+
+.head{
+   flex-direction: column;
+   padding: 1rem;
+   font-family: poppins;
+   font-size: 2rem;
+   color: rgb(248, 216, 35);
+   text-shadow: 5px 5px 10px rgba(37, 1, 10, 0.493); 
+
+        
+}
+    </style>
+</head>
+<body>
+    <div class="head"><h2>My Clock</h2></div>
+    <div class="frame">
+        <div class="days">
+            <span>SUNDAY</span>
+            <span>MONDAY</span>
+            <span>TUESDAY</span>
+            <span>WEDNESDAY</span>
+            <span>THURSDAY</span>
+            <span>FRIDAY</span>
+            <span>SATURDAY</span>
+        </div>
+        <div class="clock">
+            <div class="h num">1</div>
+            <div class="h num">2</div>
+            <div class="colon">:</div>
+            <div class="m num">1</div>
+            <div class="m num">0</div>
+            <div class="colon">:</div>
+            <div class="s num">3</div>
+            <div class="s num">0</div>
+            <div class="meridian">
+                <span>AM</span>
+                <span>PM</span>
+            </div>
+        </div>
+        <div class="date">01-10-2022</div>
+        <div class="month">
+            <span>JAN</span>
+            <span>FEB</span>
+            <span>MAR</span>
+            <span>APR</span>
+            <span>MAY</span>
+            <span>JUN</span>
+            <span>JUL</span>
+            <span>AUG</span>
+            <span>SEP</span>
+            <span>OCT</span>
+            <span>NOV</span>
+            <span>DEC</span>
+        </div>
+    </div>
+    
+<script>
+        let week = document.querySelectorAll('.days span');
+let months = document.querySelectorAll('.month span');
+let clock = document.querySelectorAll(".clock");
+let hour = document.querySelectorAll('.h');
+let minute = document.querySelectorAll('.m');
+let second = document.querySelectorAll('.s');
+let dates = document.querySelector('.date');
+let spans = document.querySelectorAll('.meridian span');
+
+setInterval(runClock,1000);
+
+function runClock () {
+let Time = new Date();
+
+//days
+months[Time.getMonth()].classList.add('month-active');
+//Months
+week[Time.getDay()].classList.add('days-active');
+
+//Date
+let da = Time.getDate();
+let mo = Time.getMonth()+1;
+let ya = Time.getFullYear();
+
+da=da<10?'0'+da:da;
+mo=mo<10?'0'+mo:mo;
+
+dates.innerHTML = `${da}-${mo}-${ya}`;
+
+
+//Time
+let nodi = Time.getSeconds();
+let nimisham = Time.getMinutes();
+let mani = Time.getHours();
+
+if(mani>12){
+    mani=mani-12;
+    spans[1].classList.add('active');
+}else{
+    if(mani===0){
+    mani=12;
+}
+    spans[0].classList.add('active');
+}
+
+nodi=nodi<10?'0'+nodi:nodi;
+nimisham=nimisham<10?'0'+nimisham:nimisham;
+mani=mani<10?'0'+mani:mani;
+
+nodi = nodi.toString();
+nimisham = nimisham.toString();
+mani = mani.toString();
+
+hour[0].innerHTML = mani[0]
+hour[1].innerHTML = mani[1]
+minute[0].innerHTML = nimisham[0]
+minute[1].innerHTML = nimisham[1]
+second[0].innerHTML = nodi[0]
+second[1].innerHTML = nodi[1]
+
+};
+</script>
+
+</body>
+</html>

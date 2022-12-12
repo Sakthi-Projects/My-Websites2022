@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Window</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+   <div class="showback">
+        <button class="show_modal">Show 1</button>
+        <button class="show_modal">Show 2</button>
+        <button class="show_modal">Show 3</button></div>
+    <div class="boxmodal hidden">
+        <ion-icon name="close-outline" class="close_btn"></ion-icon>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error nesciunt recusandae aperiam facere et repellendus iste! Hic, consequuntur possimus? Omnis aliquid dignissimos facilis quod ipsum soluta doloribus id repellat magni, quia laudantium perferendis eius eligendi enim excepturi repellendus modi accusantium neque! Nulla nesciunt atque enim aliquam unde illum eligendi sint.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A reiciendis assumenda odit natus eum consectetur quisquam excepturi, in temporibus facilis...</p>
+    </div>
+    <div class="overlay hidden">
+    </div>
+    </div>
+
+    <script>
+        const btnOpenModal = document.querySelectorAll('.show_modal');
+        const closebtnModal = document.querySelector('.close_btn');
+        const boxModal = document.querySelector('.boxmodal');
+        const overlay = document.querySelector('.overlay');
+
+        for(let i=0; i<btnOpenModal.length; i++)
+        btnOpenModal[i].addEventListener("click", function(){
+            boxModal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        })
+
+        closebtnModal.addEventListener("click",function(){
+            boxModal.classList.add('hidden');
+            overlay.classList.add('hidden');
+        })
+        
+        overlay.addEventListener("click",function(){
+            boxModal.classList.add('hidden');
+            overlay.classList.add('hidden');
+        })
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <h1>Dice Game</h1>
+    <h3>Above 50 Score You Win</h3>
+    <section>
+        <div class="player player--0 player-active">
+            <h2 class="player-title">PLAYER 1</h2>
+            <div class="total-score-0">0</div>
+            <div class="current">
+                <div class="current-label">CURRENT</div>
+                <div class="current-score--0">0</div>
+            </div>
+            <div class="winner winner-0 hidden">
+                You Win the Game
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="player player--1">
+            <h2 class="player-title">PLAYER 2</h2>
+            <div class="total-score-1">0</div>
+            <div class="current">
+                <div class="current-label">CURRENT</div>
+                <div class="current-score--1">0</div>
+            </div>
+            <div class="winner winner-1 hidden">
+               You Win the Game
+            </div>
+        </div>
+    </section>
+    <img src="dice-1.png" alt="dice" id="dice">
+    <button class="btn btn-new">🔁 NEW GAME</button>
+    <button class="btn btn-Roll">🎲 ROLL DICE</button>
+    <button class="btn btn-Hold">✅ HOLD DICE</button>
+
+        <script>
+            const winner0 = document.querySelector('.winner-0');
+            const winner1 = document.querySelector('.winner-1');
+            const player0 = document.querySelector(".player--0");
+            const player1 = document.querySelector(".player--1");
+            const score0 = document.querySelector(".total-score-0");
+            const score1 = document.querySelector(".total-score-1");
+            const currentscore0 = document.querySelector(".current-score--0");
+            const currentscore1 = document.querySelector(".current-score--1");
+            const dicesrc = document.getElementById("dice");
+            const dicebtn = document.querySelector(".btn-Roll");
+            const holdbtn = document.querySelector(".btn-Hold");
+            const resetbtn = document.querySelector(".btn-new");
+
+                    
+            let scores, currentScore, activeCurrentScore, playing;
+       
+            //Reset Button Function
+            const init = function(){
+            scores = [0,0];
+            currentScore = 0;
+            activeCurrentScore = 0;
+            playing = true;
+
+            score0.textContent=0;
+            score1.textContent=0;
+            currentscore0.textContent=0;
+            currentscore1.textContent=0;
+            
+            dicesrc.classList.add("hidden");
+            player0.classList.remove('player-wins');
+            player1.classList.remove('player-wins');
+            player0.classList.add('player-active');  
+            player1.classList.remove('player-active');
+            winner1.classList.add('hidden');
+            winner0.classList.add('hidden');
+           }
+
+            init();
+
+            //Switch the Next Player
+            const switchPlayer = function () {
+                document.querySelector(`.current-score--${activeCurrentScore}`).textContent=0;
+                currentScore = 0;
+                activeCurrentScore = activeCurrentScore === 0 ? 1 : 0;
+                player0.classList.toggle('player-active');  
+                player1.classList.toggle('player-active');
+            }
+            
+            //Game Start
+            dicebtn.addEventListener("click",function(){
+            if(playing){
+            //Random Number Genrator
+            const dice = Math.trunc(Math.random() * 6) + 1;
+            dicesrc.src =`dice-${dice}.png`;
+
+            //Add the Dice Window
+            dicesrc.classList.remove("hidden");
+            //
+            if(dice !== 1){
+                //Dice Score display in current player
+                currentScore += dice;
+                document.querySelector(`.current-score--${activeCurrentScore}`).textContent=currentScore;
+            }else{
+                //Switch to Next Player Score
+                switchPlayer();
+            }
+        }
+           })
+
+           //Hold Button using
+           holdbtn.addEventListener("click", function(){
+
+            if(playing){
+            //Add current Score to active player's Score
+            scores[activeCurrentScore] += currentScore;
+            document.querySelector(`.total-score-${activeCurrentScore}`).textContent = scores[activeCurrentScore];
+
+            //Player wins
+            if(scores[activeCurrentScore]>=50){
+                playing = false;
+                //Finish the Game
+                document.querySelector(`.player--${activeCurrentScore}`).classList.add('player-wins');
+                document.querySelector(`.winner-${activeCurrentScore}`).classList.remove('hidden');
+                dicesrc.classList.add("hidden");
+                
+
+            }else{
+                switchPlayer();
+            }
+        }
+           })
+
+           //Reset Button
+           resetbtn.addEventListener("click", init);
+
+
+   
+        </script>
+</body>
+</html>

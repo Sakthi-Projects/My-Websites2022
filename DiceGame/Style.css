@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgb(43, 1, 192) ,rgb(165, 44, 74),rgb(165, 44, 74), rgb(236, 45, 189));
+}
+
+body h1{
+   position: absolute;
+   top: 8%;
+   font-size: 3rem;
+   color: rgb(7, 247, 255);
+   text-transform: uppercase;
+   text-shadow: 1px 1px 2px black,2px 2px 2px black,3px 3px 2px rgb(43, 1, 109),4px 4px 2px rgb(2, 13, 105);
+}
+
+body h3{
+    display: none;
+}
+
+section{
+    background: rgba(168, 108, 160, 0.547);
+    height: 70%;
+    width: 25%;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    user-select: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 10px 10px 20px rgba(8, 1, 1, 0.43);
+}   
+
+.player{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.player--0,.player--1{
+    justify-content: space-around;
+}
+
+.player--0{
+    box-shadow: -10px 0px 20px rgba(8, 1, 1, 0.43);
+}
+
+.player-title{
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.total-score-0,.total-score-1{
+    font-size:8rem;
+    color: rgb(156, 0, 117);
+}
+
+.current{
+    width: 200px;
+    height: 100px;
+    background: rgba(212, 16, 75, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.current-label{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.current-score--0,.current-score--1{
+    font-size: 1.3rem;
+    font-weight: 600;
+    
+}
+
+.player-active{
+    background: rgb(240, 175, 202);
+    border-radius: 10px;
+}
+
+#dice, .btn{
+    position: absolute;
+}
+
+#dice{
+    top: 30%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.37);
+}
+.btn{
+    border: none;
+    background: rgba(177, 177, 177, 0.8);
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    border-radius: 30px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.39);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+.btn:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+
+.btn-new{
+    top: 20%;
+}
+
+.btn-Roll{
+    bottom: 35%;
+}
+
+.btn-Hold{
+    bottom: 28%;
+
+}
+
+.hidden{
+    display: none;
+}
+
+.player-wins{
+    background: rgba(5, 5, 5, 0.801);
+    color: white;
+    border-radius: 10px;
+}
+
+.player-wins .winner{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size:1.8rem;
+position: absolute;
+top: 25%;
+text-shadow: 3px 3px 8px rgb(7, 226, 255),
+            -3px -3px 8px rgb(7, 226, 255);
+animation: scale 2s ease-in-out 1;
+}
+
+@keyframes scale {
+0%{
+    transform: scale(0.1);
+}
+
+100%{
+    transform: scale(1);
+}
+}
+
+.winner .hide{
+    display: none;
+}
+
+
+@media (max-width:560px) {
+   body{
+    flex-direction: column;
+    row-gap: 1rem;
+    position: relative;
+   }
+
+   body h1{
+    font-size: 2rem;
+    top: 5%;
+    color: rgb(0, 195, 255);
+   }
+
+   body h3{
+    font-size: 1rem;
+    display: block;
+    color:rgb(185, 156, 185);
+    font-family: 'Arial Narrow Bold', Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 9%;
+   }
+
+   section{
+    width: 450px;
+    height: 200px;
+    transform: translateY(80px);
+   }
+
+   .player{
+    display: flex;
+    flex-direction: row;
+    }
+
+   #dice{
+    transform: scale(0.8);
+    top: 10%;
+    }
+
+    .btn{
+        width: 140px;
+        height: 45px;
+        background: rgba(255, 166, 0, 0.678);
+    }
+
+    .btn-Hold{
+        top: 83%;
+        right: 5px;
+    }
+    .btn-new{
+        top: 83%;
+        left:5px;
+    }
+    .btn-Roll{
+        top: 83%;
+    }
+
+    .player .player-title{
+        position: absolute;
+        top: 5px;
+        font-size: 1.2rem;
+        color:rgb(94, 1, 63);
+        padding-bottom: 10px;
+    }
+
+    .player-wins .winner{
+       top: -50%;
+    }
+        
+        .player-wins{
+            background: rgba(229, 245, 1, 0.801);
+            color: white;
+            border-radius: 10px;
+        }
+      
+}

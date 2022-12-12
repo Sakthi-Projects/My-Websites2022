@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;0,900;1,500&family=Secular+One&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+
+body{
+    background: #ecf0f3;
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+
+.container{
+max-width: 900px;
+width: 800px;
+height: 100vh;
+background: black;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.top button{
+    width: 180px;
+    height: 50px;
+    font-size: 1.8rem;
+    border: none;
+    background: white;
+}
+
+
+.top h3{
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.secretNumber{
+    width: 100%;
+    background: rgb(255, 249, 249);
+    padding: 2rem;
+    font-size: 5rem;
+    font-weight: bolder;
+    box-shadow: inset 5px 5px 12px grey, inset -4px 4px 12px white;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.section{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left input{
+    display: block;
+    width: 200px;
+    height: 100px;
+    background: transparent;
+    border: 1px solid white;
+    box-shadow: inset 4px 4px 12px rgb(255, 255, 255),
+                        inset -4px -4px 12px black;
+
+    font-size: 5rem;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+}
+
+.left .check_btn{
+    width: 150px;
+    height: 50px;
+    font-size: 2rem;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 1rem;
+    line-height: 10px;
+    
+}
+
+.left .reload{
+    display: block;
+    width: 150px;
+    height: 50px;
+    font-size: 2rem;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 1rem;
+    line-height: 10px;
+    margin-top: 4rem;
+}
+
+.right{
+ padding: 1rem;
+ height: 300px;
+ display: flex;
+ flex-direction: column;
+}
+
+.right .answer{
+    margin-bottom: 2em;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.right .scorelabel{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+@media (max-width:576px){
+    .section{
+        flex-direction: column;
+    }
+
+    .left input{
+        margin: 0;
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        width: 150px;
+        height: 80px;
+
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+         text-align: center;
+        margin-top: 10rem;
+        justify-content: center;
+    }
+
+    .left .reload{
+        display: none;
+    }
+
+    .right .scorelabel{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .top .again-btn{
+        width: 100px;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .top h3{
+        font-size: 1.5rem;
+        line-height: 50px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <button class="again-btn">AGAIN</button>
+            <h3>Between (1 and 20)</h3>
+        </div>
+            <div class="Ansholder">
+                <div class="secretNumber">?</div>
+            </div>
+        
+        <div class="section">
+            <div class="left">
+                <input type="number" name="number" class="guess" placeholder="0">
+                <button class="check_btn">Check</button>
+                <button class="reload">Reload</button>
+            </div>
+            
+            <div class="right">
+                <div class="answer">Start Guessing...</div>
+                <div class="scorelabel">SCORE : <span class="Score">20</span></div>
+                <div class="scorelabel">HIGH SCORE : <span class="HighScore">0</span></div>
+            </div>
+        </div>
+       
+    </div>
+    <script>
+            const number = Math.trunc(Math.random()*20)+1;
+    
+    let score = 20;
+    let highscore = 0;
+
+        document.querySelector(".reload").addEventListener("click", e =>{
+            location.reload();
+        })
+
+  document.querySelector('.check_btn').addEventListener("click", function(){
+
+    let guess = Number (document.querySelector('.guess').value);
+
+    if(!guess){
+        document.querySelector(".answer").textContent = "🚫 Not a  Number";
+    }else if(guess === number)
+    {
+        document.querySelector(".answer").textContent = "🥳 Correct Answer";
+        document.querySelector(".secretNumber").textContent = number;
+        document.querySelector(".secretNumber").style.color = "#09ac11"
+        document.querySelector(".container").style.backgroundColor ="#09ac11";
+        
+        if(score > highscore){
+            highscore = score;
+            document.querySelector(".HighScore").textContent = highscore;
+        }
+        
+        
+    }else if(guess > number)
+    {
+        if(score > 1){
+        document.querySelector(".answer").textContent = "😨 Too High";
+        score--;
+        document.querySelector('.Score').textContent = score;
+        } else{
+            document.querySelector(".answer").textContent = "😞 You Lost";
+            document.querySelector('.Score').textContent = 0;
+            document.querySelector(".container").style.backgroundColor ="#f12906";
+        }
+             
+    }
+    else if(guess < number)
+    {
+        if(score > 1){
+        document.querySelector(".answer").textContent = "🥱 Too Low";
+        score--;
+        document.querySelector('.Score').textContent = score;
+        } else{
+            document.querySelector(".answer").textContent = "😞 You Lost";
+            document.querySelector('.Score').textContent = 0;
+            document.querySelector(".container").style.backgroundColor ="#f12906";
+        }
+    }
+});
+
+document.querySelector(".again-btn").addEventListener("click", e =>{
+
+    const number = Math.trunc(Math.random()*20)+1;
+    document.querySelector(".secretNumber").textContent = "?" ;
+    document.querySelector(".answer").textContent = "Start Guessing..";
+    document.querySelector('.Score').textContent = 20;
+    document.querySelector(".container").style.backgroundColor ="black";
+    document.querySelector('.guess').value = "";
+});
+    </script>
+</body>
+</html>
