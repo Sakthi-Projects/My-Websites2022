@@ -1,0 +1,1269 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Patua+One&family=Permanent+Marker&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;0,900;1,500&family=Secular+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+/* Color Theme Swatches in Hex */
+--mustard1: #001542; 
+--mustard2: #085454; 
+--mustard3: #7A7A7A; 
+--mustard4: #FFFFFF; 
+--mustard5: #FFB30D; 
+--mustard6: #c23616;
+--mustard7:  #2c3e50;
+--fam:poppins;
+--fambrand:'Patua One', cursive;
+
+}
+::-webkit-scrollbar-track{
+    background: rgb(201, 201, 201);
+}
+::-webkit-scrollbar-thumb{
+ background: var(--mustard2);
+}
+::-webkit-scrollbar{
+    width: 2px;
+    height: 2px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/*----------------------------------------------------------------------------------------------*/
+.navbar{
+    background:var(--mustard7);
+ 
+}
+.navbar .navbar-brand{
+    color: var(--mustard4);
+    font-size: 2rem;
+    font-family: var(--fambrand);
+    letter-spacing: 2px;
+   transition: 0.2s ease-in-out;
+}
+.navbar .navbar-brand:hover{
+    color: var(--mustard5);
+}
+.navbar .navbar-brand span{
+    color: var(--mustard5);
+    transition: 0.2s ease-in-out;
+}
+
+.navbar .navbar-brand span:hover{
+    color: var(--mustard4);
+}
+.navbar .navbar-brand:hover > span {
+    color: var(--mustard4);
+}
+
+.navbar .nav-item{
+    background: linear-gradient(to right, var(--mustard7), rgba(0,0,0,.3));
+    margin: 0rem 0rem 0rem 0.9rem;
+    height: 100% !important;
+    border-radius: 0.6rem;
+    transition: 0.1s ease-in;
+
+}
+
+.navbar .nav-item:hover{
+   box-shadow: inset 1px 1px 2px white, 2px 2px 3px rgba(0, 0, 0, 0.63);
+}
+.navbar .nav-item:active{
+    box-shadow: inset 0px 0px 0px white, 0px 0px 0px rgba(0, 0, 0, 0.63);
+ }
+ .navbar .nav-item:active > .nav-link{
+    transform: scale(0.9);
+    transition: 0.1s ease-in;
+ }
+.navbar .nav-item .nav-link{
+    color: var(--mustard4);
+    font-family:var(--fam);
+    font-weight: 600;
+    padding: 0.8rem;
+}
+
+.signup{
+    margin-right: 20px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    font-family: var(--fam);
+    background: var(--mustard5);
+    color: white;
+    font-weight: 500;
+    transition: 0.25s ease-in-out;
+}
+.signup:hover{
+    background: #c23616;
+}
+/*-----------------------------homepage-----------------------------------------------------------------*/
+
+#homepage{
+    width: 100%;
+    height: 92vh;
+    background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.6)),url(https://images.pexels.com/photos/2779948/pexels-photo-2779948.jpeg?auto=compress&cs=tinysrgb&w=1600);
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#homepage .page-title{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100px);
+}
+
+#homepage .page-title h1{
+    color: var(--mustard5);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+#homepage .page-title button{
+    color: var(--mustard4);
+    background: transparent;
+    border: 2.2px solid rgb(255, 255, 255);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 3px 3px 5px rgb(0, 238, 255,.8),-3px -2px 5px rgb(0, 238, 255,.8),4px 2px 8px rgb(0, 238, 255,.8),inset 4px 2px 8px rgb(0, 238, 255,.8),inset -4px -2px 8px rgb(0, 238, 255,.8);
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: 0.25s ease-in-out;
+    margin-top: 1rem;
+}
+
+#homepage .page-title button:hover{
+    box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.8),-3px -2px 5px rgba(95, 95, 95, 0.8);
+    background: var(--mustard7);
+}
+
+#homepage .page-title button:active{
+    box-shadow: none;
+    transform: translateY(20px);
+}
+/*-----------------------------Title-----------------------------------------------------------------*/
+
+#homepage .title-box{
+    height: 100%;
+    width:100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+#homepage .title-box.title-active{
+    transform: scale(1);    
+}
+
+#homepage .title-box .tools{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: var(--mustard4);
+    width: 480px;
+    min-height: 300px;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 5px;
+    padding: 20px 10px;
+    position: relative;
+}
+
+@media (max-width:420px) {
+    #homepage .title-box .tools{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background: var(--mustard4);
+        width: 380px;
+        min-height: 200px;
+        flex-wrap: wrap;
+        gap: 20px;
+        border-radius: 5px;
+        padding: 20px 10px;
+        position: relative;
+    }
+}
+
+#homepage .title-box .tools .tool-item{
+    list-style: none;
+    width: 400px;
+    background: var(--mustard7);
+    height: 50px;
+    border-radius: 5px;
+   text-align: center;
+   transition: 0.25s ease-in-out;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px, inset rgba(255, 255, 255, 0.6) 0px 3px 4px;
+}
+#homepage .title-box .tools .tool-item:hover{
+    background: rgb(44, 57, 66);
+}
+#homepage .title-box .tools .tool-item:active{
+    transform: scale(0.9);
+}
+
+
+
+#homepage .title-box .tools .tool-item .tool-link{
+   text-decoration: none;
+   color: var(--mustard4);
+   line-height: 45px;
+   font-size: 1.8rem;
+   font-weight: 600;
+}
+
+#homepage .title-box .tools .page-title{
+    transform: translateY(-10px);
+ 
+}
+
+#homepage .title-box .tools .tool-head{
+list-style: none;
+width: 100%;
+height: 50px;
+background: linear-gradient(to right, rgba(255,255,255,1),rgb(115, 0, 126),rgba(255,255,255,1));
+text-align: center;
+}
+
+#homepage .title-box .tools .tool-head .tool-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--mustard4);
+    line-height: 50px;
+    font-size: 1.8rem;
+    font-weight: 600;
+
+}
+
+#homepage .title-box .tools .tool-close{
+    list-style: none;
+   position: absolute;
+   right:0;
+   top: 0%;
+   padding:2px 5px;
+   color: rgb(3, 3, 3);
+
+}
+
+#homepage .title-box .tools .tool-close i{
+    font-size: 1.3rem;
+}
+#homepage .title-box .tools .tool-close:hover{
+    color: rgb(255, 0, 0);
+}
+
+#homepage .title-box .tools .tool-close:active{
+    color: rgb(245, 86, 86);
+}
+
+
+
+/*-----------------------------Country-----------------------------------------------------------------*/
+
+#homepage  .country-details{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.6)),url(https://images.pexels.com/photos/1098515/pexels-photo-1098515.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    transition: 0.25s ease-in-out;
+    transform: scale(0);
+}
+#homepage .country-details.country-active{
+    transform: scale(1);
+}
+#homepage  .country-details .country-box{
+    background: white;
+    height: 70%;
+    width: 550px;
+    max-width: 550px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fam);
+    border-radius: 10px;
+}
+
+@media (max-width:420px) {
+    #homepage  .country-details .country-box{
+        background: white;
+        height: 80%;
+        width: 380px;
+        max-width: 400px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        font-family: var(--fam);
+        border-radius: 10px;
+    }
+
+    
+}
+
+#homepage  .country-details .country-box .country-head{
+    width: 100%;
+   background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.5)), url(https://images.pexels.com/photos/7635156/pexels-photo-7635156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+   background-size: cover;
+   background-position: center;
+   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}
+#homepage  .country-details .country-box i {
+      text-align: right;
+      color: red;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 5px;
+      font-size: 1.2rem;
+} 
+
+#homepage  .country-details .country-box i:hover{
+    color: white;
+}
+
+#homepage  .country-details .country-box i:active{
+    color: rgb(167, 167, 167);
+}
+
+#homepage  .country-details .country-box .country-head h2{
+   font-size: 1.4rem;
+   text-align: center;
+   padding: 1rem;
+   color:var(--mustard4);
+}
+
+
+@media (max-width:420px) {
+    #homepage  .country-details .country-box .country-head h2{
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 1rem;
+        color:var(--mustard4);
+     }
+
+    #homepage  .country-details .country-box .country-head .country-input{
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 2px solid var(--mustard4);
+        margin-right: 1rem;
+        padding: 5px;
+        color: var(--mustard5);
+        font-size: 1rem;
+     }
+
+    
+}
+
+
+#homepage  .country-details .country-box .country-head .country-input::placeholder{
+    color: #d9dad4;
+}
+#homepage  .country-details .country-box .country-head .country-input{
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid var(--mustard4);
+    margin-right: 1rem;
+    padding: 5px;
+    color: var(--mustard5);
+    font-size: 1.2rem;
+ }
+
+ #homepage  .country-details .country-box .country-head .country-searchbtn{
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    background: var(--mustard4);
+    color: #001542;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    transition: 0.1s ease-in-out;
+ }
+
+ #homepage  .country-details .country-box .country-head .country-searchbtn:hover{
+    color: var(--mustard4);
+    background: var(--mustard1);
+ }
+
+ #homepage  .country-details .country-box .country-head .country-searchbtn:active{
+    transform: scale(0.9);
+ }
+
+ #homepage  .country-details .country-box .country-head .resetcons{
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    background: var(--mustard4);
+    color: #001542;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    transition: 0.1s ease-in-out;
+ }
+
+
+ @media (max-width:420px) {
+    #homepage  .country-details .country-box .country-head .resetcons{
+        border: none;
+        padding: 0px;
+        border-radius: 5px;
+        background: var(--mustard4);
+        color: #001542;
+        font-weight: 600;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+        transition: 0.1s ease-in-out;
+        margin-top: 5px;
+     }
+}
+
+
+ #homepage  .country-details .country-box .country-head .resetcons:hover{
+    color: var(--mustard4);
+    background: var(--mustard1);
+ }
+
+ #homepage  .country-details .country-box .country-head .resetcons:active{
+    transform: scale(0.9);
+ }
+
+ /*-----------------------------Country-contend-----------------------------------------------------------------*/
+
+ .country-contend{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "flag right"
+    "chinnam bottom";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 200px 1fr;
+   
+ }
+ /*-----------------------------Flag-----------------------------------------------------------------*/
+ .country-contend .flag-contend{
+    grid-area: flag;
+    border-right: 1px solid rgb(211, 211, 211);
+
+ }
+ .country-contend .flagName{
+    width: 180px;
+    height: 130px;
+    margin: 20px 0px 5px 20px;
+ }
+ .country-contend .flagName img{
+    width: 100%;
+    height: 100%;
+   object-fit: cover;
+
+
+ }
+
+ .country-contend .flag-title{
+    text-align: center;
+    font-family: var(--fam);
+    text-transform: uppercase;
+    font-weight: 600;
+ }
+
+/*-----------------------------Right-----------------------------------------------------------------*/
+
+ .country-contend .countryRight{
+    grid-area: right;
+    padding: 1rem;
+ }
+
+ .country-contend .countryRight .const {
+   display:flex;
+   flex-wrap: wrap;
+   width: 280px;
+
+ }
+ .country-contend .countryRight .const span{
+    min-width: 100px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #7A7A7A;
+    display: flex;
+    flex-wrap: wrap;
+ }
+ .country-contend .countryRight .const #cons{
+    width: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+    flex-wrap: wrap;
+ }
+
+ @media (max-width:420px) {
+    .country-contend .countryRight .const {
+        display:block;
+        flex-wrap: wrap;
+        width: 280px;
+        font-size: 0.5rem;
+      }
+}
+/*-----------------------------Embelam-----------------------------------------------------------------*/
+
+ .country-contend .countrybottom{
+    grid-area: bottom;
+    background: var(--mustard5);
+ }
+
+ .country-contend .chinnam{
+    grid-area: chinnam;
+    border-right: 1px solid rgb(211, 211, 211);
+ }
+
+ .country-contend .chinnamName{
+    width: 120px;
+    height: 200px;
+    margin: 50px 0px 5px 40px;
+    object-fit: cover;
+    object-position: top;
+ }
+
+ .country-contend .chinnamName img{
+    width: 150px;
+    object-fit: cover;
+ }
+
+ .country-contend .chinnam-title{
+    text-align: center;
+    font-family: var(--fam);
+    font-weight: 600;
+ }
+
+
+ /*-----------------------------Embelam Right-----------------------------------------------------------------*/
+ .country-contend .countrybottom{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: center;
+ 
+    
+ }
+
+ .country-contend .countrybottom .cont {
+    display:flex;
+    flex-wrap: wrap;
+    width: 300px;
+ }
+ 
+ .country-contend .countrybottom .cont .cons{
+    width: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+ }
+
+ .country-contend .countrybottom .cont span{
+    min-width: 100px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+ }
+
+ 
+ .removec{
+    visibility: hidden;
+ }
+
+
+
+ /*------------------------------------------------------------------------------------------*/
+
+ /*Weather*/
+
+#homepage .weatherApp{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.6)),url(https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    position: absolute;
+    top: 0; 
+    background-position: center;
+    background-size: cover;
+    display:grid;
+    place-items: center;
+    transition: 0.25s ease-in-out;
+    transform: scale(0);
+    
+}
+#homepage .weatherApp.weather-active{
+    transform: scale(1);
+}
+#homepage .weatherApp .climate{
+    width: 800px;
+    max-width: 800px;
+    min-height: 400px;
+    background: white;
+    font-family: var(--fam);
+    display: grid;
+    grid-template-rows: repeat(3,10% 30% 60%);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 1px 2px, rgba(253, 250, 250, 0.7) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    overflow: hidden;
+    margin-bottom: 200px;
+}
+#homepage .weatherApp .climate .weather-title{
+    display: flex;
+    justify-content: space-between;
+    background: #f0f0f0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px;
+}
+
+#homepage .weatherApp .climate .weather-title h3{
+color: var(--mustard6);
+font-weight: 700;
+font-size: 1.5rem;
+}
+
+#homepage .weatherApp .climate .weather-title i{
+   font-size: 1.4rem;
+   color: red;
+   font-weight: 600;
+    line-height: 30px;
+}
+#homepage .weatherApp .climate .weather-title i:active{
+    color: rgb(218, 99, 99);
+}
+#homepage .weatherApp .climate .weatherSearch{
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ }
+
+ #homepage .weatherApp .climate .weatherSearch input{
+    border: none;
+    background: none;
+    outline: none;
+    width: 250px;
+    height: 50px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    font-family: var(--fam);
+    font-weight: 600;
+    color: var(--mustard6);
+    font-size: 1.2rem;
+}
+
+#homepage .weatherApp .climate .weatherSearch button{
+    border: none;
+    background: #c23616;
+    color: #ffffff;
+    height: auto;
+    padding: 0.4rem;
+    width: 100px;
+    margin-left: 1rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    transition: 0.1s ease-in-out;
+}
+#homepage .weatherApp .climate .weatherSearch p{
+color: red;
+position: absolute;
+top: 70%;
+left: 27%;
+
+}
+#homepage .weatherApp .climate .weatherSearch button:hover{
+    background: #fd2e00;
+}
+
+#homepage .weatherApp .climate .weatherSearch button:active{
+    background: #2e120c;
+}
+
+
+#homepage .weatherApp .climate .weather_Report{
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#homepage .weatherApp .climate .weather_Report #topcity{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(to right, white, rgb(0, 245, 147),white);
+}
+
+#homepage .weatherApp .climate .weather_Report .box{
+    width: 200px;
+    text-align: center;
+}
+
+#homepage .weatherApp .climate .weather_Report .box span{
+font-size: 4rem;
+color: #f87000;
+font-weight: 600;
+}   
+#homepage .weatherApp .climate .weather_Report .box .unit{
+    font-size: 2rem;
+    color: #7A7A7A;
+} 
+#homepage .weatherApp .climate .weather_Report .box h3{
+    font-size: 1.1rem;
+}
+
+@media (max-width:990px) {
+    #homepage .weatherApp .climate{
+        width: 600px;
+        height: 700px;
+        display: grid;
+        grid-template-rows: repeat(3,8% 15% 82%);
+        margin-top: 20px;
+       
+    }
+       
+    #homepage .weatherApp .climate .weather_Report{
+        display: block;
+        
+    }
+    #homepage .weatherApp .climate .weather_Report .box{
+        width: auto;
+        margin-top: 10px;
+        background-image: linear-gradient(to right bottom, #ffffff, #e2e5fb, #bbcef7, #84bbf3, #12a9eb);
+        padding: 10px;
+    }
+    #homepage .weatherApp .climate .weather-title{
+       padding: 10px;
+        }
+        #homepage .weatherApp .climate .weather-title h3{
+            line-height: 40px;
+             }
+    #homepage .weatherApp .climate .weather-title i{
+           font-size: 1.5rem;
+           color: red;
+           font-weight: 600;
+            line-height: 40px;
+    }
+    #homepage .weatherApp .climate .weatherSearch p{
+        color: red;
+        position: absolute;
+        top: 70%;
+        left: 20%;
+        
+        }
+}
+
+@media (max-width:591px) {
+    #homepage .weatherApp .climate{
+        width: 400px;
+        height: 700px;
+        display: grid;
+        grid-template-rows: repeat(3,8% 15% 82%);
+        margin-top: 20px;
+       
+    }
+       
+    #homepage .weatherApp .climate .weather_Report{
+        display: block;
+        
+    }
+    #homepage .weatherApp .climate .weather_Report .box{
+        width: auto;
+        margin-top: 10px;
+        background-image: linear-gradient(to right bottom, #ffffff, #e2e5fb, #bbcef7, #84bbf3, #12a9eb);
+        padding: 10px;
+    }
+    #homepage .weatherApp .climate .weather-title{
+       padding: 10px;
+        }
+        #homepage .weatherApp .climate .weather-title h3{
+            line-height: 40px;
+             }
+    #homepage .weatherApp .climate .weather-title i{
+           font-size: 1.5rem;
+           color: red;
+           font-weight: 600;
+            line-height: 40px;
+    }
+    #homepage .weatherApp .climate .weatherSearch p{
+        color: red;
+        position: absolute;
+        top: 70%;
+        left: 6%;
+        
+        }
+}
+
+/*-----------------------------------Currency---------------------------*/
+
+#homepage .Currency_Converter{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.6)),url(https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    position: absolute;
+    top: 0; 
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    transition: 0.25s ease-in-out;
+    font-family: var(--fam);
+    transform: scale(0);
+    transform-origin: top;
+}
+#homepage .Currency_Converter.activeCurrency{
+    transform: scale(1);
+}
+
+#homepage .Currency_Converter .Class_Group{
+    width: 500px;
+    height: 350px;
+    background: #f5f6fa;
+    position: relative;
+}
+#homepage .Currency_Converter .Class_Group .curhead{
+    width: 100%;
+    text-align: center;
+    background: #576574;
+    padding: 10px;
+    color: #dcdde1; 
+
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+#homepage .Currency_Converter .Class_Group .outputgroup input, select{
+    border: none;
+    outline: none;
+    background: none;
+    
+}
+#homepage .Currency_Converter .Class_Group .outputgroup input::placeholder{
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+#homepage .Currency_Converter .Class_Group .outputgroup input{
+    padding: 10px;
+    width: 150px;
+    border-right: 1px solid #dcdde1;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup select{
+    height: 100%;
+    width: 100px;
+    padding: 5px;
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup .FirstClass,.SecondClass{
+    border: 1px solid #dcdde1;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup #getbtn{
+    width: 100px;
+    border: none;
+    background: #718093;
+    color: #f5f6fa;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: 0.1s ease-in;
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup #getbtn:hover{
+    background: #4d5a6b;
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup #getbtn:active{
+    background: #707c8d;
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup .output{
+     width: 100%;
+    height: 100px;
+    padding: 20px;
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup .output #ans{
+    font-weight: 400;
+    color: #999999;
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup .output i{
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    color: rgb(253, 253, 253);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+#homepage .Currency_Converter .Class_Group .outputgroup .output i:hover{
+    color: red;
+}
+
+/*---------------------Dict-------------------------------------*/
+
+#homepage .Dictionary{
+    height: 92vh;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.4)),url(https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    position: absolute;
+    top: 0; 
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s ease-in-out;
+    font-family: var(--fam);
+    transform: scale(0);
+    transform-origin: top;
+}
+
+#homepage .Dictionary.activeDics{
+    transform: scale(1);
+}
+
+#homepage .Dictionary .book{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+#homepage .Dictionary .book:hover .cover{
+    transform: rotateX(5deg) rotateY(-180deg);
+}
+
+#homepage .Dictionary .book .cover{
+    z-index: 1;
+    transition: all 3s;
+    transform-origin: center left;
+}
+
+#homepage .Dictionary .book .cover h2,h5{
+    color: white;
+    text-align: center;
+    margin-top: 50%;
+    position: relative;
+}
+#homepage .Dictionary .book .last_page i{
+    position: absolute;
+    top: 0%;
+    right:4%;
+    color: red;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+#homepage .Dictionary .book .back_cover{
+    z-index: -2;
+}
+
+#homepage .Dictionary .book:hover .page{
+    transform: rotateX(5deg) rotateY(-180deg);
+    z-index: 2;
+    transition: all 3s;
+}
+
+#homepage .Dictionary .book .cover, .back_cover{
+    width: 450px;
+    height: 600px;
+    background: #273c75;
+    border-radius: 4px 25px 25px 4px;
+    position: absolute;
+    transform: rotateX(5deg);
+    box-shadow:inset 2px 2px 5px rgba(0, 0, 0, 0.568), inset -2px -2px 5px rgba(255, 255, 255, 0.342), 1px 1px 10px rgba(0, 0, 0, 0.671);
+
+}
+
+#homepage .Dictionary .book .page, .last_page{
+    width: 435px;
+    height: 575px;
+    background: #ffffff;
+    border-radius: 4px 25px 25px 4px;
+    position: absolute;
+    z-index: ;
+    transform: rotateX(5deg);
+    transform-origin: center left;
+    z-index: -1;
+}
+
+#homepage .Dictionary .book .last_page{
+    z-index: -1;
+}
+
+#homepage .Dictionary .book .page:nth-child(1){
+    transition-duration:3s;
+}
+#homepage .Dictionary .book .page:nth-child(2){
+    transition-duration:2.8s;
+}
+#homepage .Dictionary .book .page:nth-child(3){
+    transition-duration:2.5s;
+}
+#homepage .Dictionary .book .page:nth-child(4){
+    transition-duration:2s;
+}
+#homepage .Dictionary .book .page:nth-child(5){
+    transition-duration:1.4s;
+}
+
+#homepage .Dictionary .book:hover #homepage .Dictionary .book .page:nth-child(2){
+    transition-duration:5s;
+}
+#homepage .Dictionary .book:hover #homepage .Dictionary .book .page:nth-child(3){
+    transition-duration:4.6s;
+}
+#homepage .Dictionary .book:hover #homepage .Dictionary .book .page:nth-child(4){
+    transition-duration:4.2s;
+}
+#homepage .Dictionary .book:hover #homepage .Dictionary .book .page:nth-child(5){
+    transition-duration:3.8s;
+}
+
+#homepage .Dictionary .book .last_page .form{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homepage .Dictionary .book .last_page .form input{
+    margin: 10px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #001542;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#homepage .Dictionary .book .last_page .form input::placeholder{
+    font-size: .8rem;
+    font-weight: 100;
+}
+
+#homepage .Dictionary .book .last_page .form button{
+    margin: 10px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #001542;
+    background: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #001542;
+    transition: 0.1s ease-in;
+    
+}
+
+#homepage .Dictionary .book .last_page .form button:hover{
+    background:#001542;
+    color:white;
+}
+
+#homepage .Dictionary .book .last_page .form button:active{
+    background:#234794;
+    color:white;
+}
+
+#homepage .Dictionary .book .last_page .def{
+    border: 1px solid #001542;
+    height: 450px;
+    max-width: 400px;
+    margin-left: 20px;
+    cursor: text;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+#homepage .Dictionary .book .last_page #defcode, #defAnswer{
+    font-size: 1rem;
+    color: black;
+}
+
+@media (max-width:930px) {
+    #homepage .Dictionary .book .cover, .back_cover{
+        width: 350px;
+        height: 500px;
+        background: #273c75;
+        border-radius: 4px 25px 25px 4px;
+        position: absolute;
+        transform: rotateX(5deg);
+        box-shadow:inset 2px 2px 5px rgba(0, 0, 0, 0.568), inset -2px -2px 5px rgba(255, 255, 255, 0.342), 1px 1px 10px rgba(0, 0, 0, 0.671);
+    }
+
+    #homepage .Dictionary .book .page, .last_page{
+        width: 330px;
+        height: 475px;
+        background: #ffffff;
+        border-radius: 4px 25px 25px 4px;
+        position: absolute;
+        z-index: ;
+        transform: rotateX(5deg);
+        transform-origin: center left;
+        z-index: -1;
+    }
+
+    #homepage .Dictionary .book .last_page .form{
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #homepage .Dictionary .book .last_page .form input{
+        border: none;
+        outline: none;
+        width: 120px;
+        padding: 1px;
+        border-radius: 5px;
+        border: 1px solid #001542;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    #homepage .Dictionary .book .last_page .form button{
+        margin: 10px;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #001542;
+        background: white;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #001542;
+        transition: 0.1s ease-in;
+        
+    }
+    #homepage .Dictionary .book .last_page .def{
+        border: 1px solid #001542;
+        height: 370px;
+        max-width: 300px;
+        margin-left: 20px;
+        cursor: text;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: scroll;
+    }
+
+    #homepage .Dictionary .book .last_page i{
+        position: absolute;
+        top: 5%;
+        right:4%;
+        color: red;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    #homepage .Dictionary .book .last_page #defcode, #defAnswer{
+        font-size: 0.8rem;
+        color: black;
+    }
+}
+
+@media (max-width:530px) {
+    #homepage .Dictionary .book .cover, .back_cover{
+        width: 250px;
+        height: 600px;
+        background: #273c75;
+        border-radius: 4px 25px 25px 4px;
+        position: absolute;
+        transform: rotateX(5deg);
+        box-shadow:inset 2px 2px 5px rgba(0, 0, 0, 0.568), inset -2px -2px 5px rgba(255, 255, 255, 0.342), 1px 1px 10px rgba(0, 0, 0, 0.671);
+    }
+
+    #homepage .Dictionary .book .page, .last_page{
+        width: 235px;
+        height: 575px;
+        background: #ffffff;
+        border-radius: 4px 25px 25px 4px;
+        position: absolute;
+        z-index: ;
+        transform: rotateX(5deg);
+        transform-origin: center left;
+        z-index: -1;
+    }
+
+    #homepage .Dictionary .book .last_page .form{
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #homepage .Dictionary .book .last_page .def{
+        border: 1px solid #001542;
+        height: 450px;
+        max-width: 300px;
+        margin: 5px;
+        cursor: text;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: scroll;
+    }
+
+    #homepage .Dictionary .book .last_page i{
+        position: absolute;
+        top: 0%;
+        right:8%;
+        color: red;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    #homepage .Dictionary .book .last_page #defcode, #defAnswer{
+        font-size: 0.8rem;
+        color: black;
+    }
+}
