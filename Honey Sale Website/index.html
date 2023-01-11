@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakthi's Honey</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon_io/favicon-32x32.png">
+</head>
+
+<body class="remo">
+  <section id="home">
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="logo d-flex">
+          <h1 class="text px-3 pt-3 pb-0"><span>SAKTHI'S</span> HONEY</h1>
+          <div class="quote">
+            <h6 px-1 pb-0">Best Organic Honey</h6>
+          </div>
+        </div>
+        <img class="img-fluid" src="./Images/hone1.jpg" id="topimg" alt="">
+      </div>
+      <div class="row">
+        <nav class="navbar navbar-expand-lg px-5" id="navbar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span class="text-white">SAKTHI'S</span></a>
+            <button class="navbar-toggler text-bg-warning" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mx-auto mb-2 mb-lg-0" id="nav-tabs">
+                <li class="nav-item px-3 mt-lg-0 mt-2 mb-lg-0 mb-2 active">
+                  <a class="nav-link text-white" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item px-3 mb-lg-0 mb-2">
+                  <a class="nav-link text-white" href="#about">About</a>
+                </li>
+                <li class="nav-item px-3 mb-lg-0 mb-2">
+                  <a class="nav-link text-white" href="#products">Products</a>
+                </li>
+                <li class="nav-item px-3 mb-lg-0 mb-1 ">
+                  <a class="nav-link text-white" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="cart d-flex mx-sm-5" id="cart-display" onclick="add()">
+              <ion-icon name="cart"></ion-icon>
+              <div class="cart-count">0</div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="cart-box-use">
+        <div class="carthead"><ion-icon name="close-outline" class="cart_close_btn" onclick="remove()"></ion-icon>
+          <h2 class="carth2">Cart Items</h2>
+        </div>
+        <div class="cart-details">
+          <!--
+                        <div class="cart-boxes">
+                          <div class="image">
+                            <img class="img-fluid cart-img" src="./Images/hon5.png" alt="">
+                          </div>
+                          <div class="cart-contend">
+                            <div class="Cart-title">Ponthu Honey</div>
+                            <div class="price">
+                              <div class="cart-price">Rs. 800</div>
+                              <div class="cart-price-total">Rs. 800</div>
+                            </div>
+                            <input type="number" value="1" class="cart-quantity">
+                          </div>
+                          <ion-icon name="trash" class="carttrash"></ion-icon>
+                        </div>
+
+                        <div class="cart-boxes">
+                          <div class="image">
+                            <img class="img-fluid cart-img" src="./Images/hon5.png" alt="">
+                          </div>
+                          <div class="cart-contend">
+                            <div class="Cart-title">Wilds Honey</div>
+                            <div class="price">
+                              <div class="cart-price">Rs.950</div>
+                              <div class="cart-price-total">Rs.950</div>
+                            </div>
+                            <input type="number" value="1" class="cart-quantity">  
+                          </div>
+                          <ion-icon name="trash" class="carttrash"></ion-icon>
+                        </div>
+                      -->
+        </div>
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">Rs.0</div>
+        </div>
+        <button class="btn-buy" data-bs-toggle="modal" data-bs-target="#exampleModal" disabled>Place Order</button>
+
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-6 col-12 align-self-lg-center pt-lg-0 pt-4" id="left-contend">
+          <h1 class="text pb-2"><span>SAKTHI'S</span> HONEY</h1>
+          <p class="pb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nisi at eveniet distinctio
+            facilis minima necessitatibus dolorem reiciendis. Praesentium provident, possimus officia quis temporibus
+            est quibusdam quam maxime velit quidem dicta repellendus, consequatur quasi! Fugit ea repellat aliquam
+            doloribus sequi quae dolorum impedit libero, perspiciatis qui sed quibusdam pariatur corporis!</p>
+          <button class="btn" id="btn">Get Started</button>
+        </div>
+        <div class="col col-lg-6 col-12" id="right-contend">
+          <img class="right-img" class="img-fluid" src="./Images/side1.png" alt="">
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  </div>
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-6 col-12 pt-lg-0 pt-4 order-2 align-self-center" id="about-right">
+          <h4 class="about pb-2"><strong>ABOUT US</strong></h4>
+          <p class="pb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem assumenda corrupti
+            explicabo repudiandae distinctio. Non aliquid delectus ipsum, iure distinctio ratione quidem asperiores
+            eaque, soluta, quaerat nisi est. Repudiandae omnis incidunt molestiae exercitationem explicabo aut pariatur
+            id recusandae voluptate molestias saepe, consequuntur sunt! Ex odio officiis eaque velit architecto suscipit
+            cumque veniam impedit accusamus reiciendis dolores, labore at quas! Consectetur voluptatem vel culpa
+            possimus enim provident necessitatibus reprehenderit minima doloremque...</p>
+          <p class="pb-2"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, ipsum!</strong>
+          </p>
+          <button class="btn" id="btn">Get in Touch</button>
+        </div>
+        <div class="col col-lg-6 col-12 order-1" id="about-left">
+          <img class="img-fluid ab-img" src="./Images/abimg.jpg" alt="">
+        </div>
+      </div>
+      <div class="row mt-5" id="grid-con">
+        <div class="col col-12 text-center">
+          <H1>FARMING</H1>
+        </div>
+        <div class="col col-lg-12" id="grid-img">
+          <img class="img-fluid" src="./Images/farm1.jpg" width="400px" alt="">
+          <img class="img-fluid" src="./Images/farm2.jpg" width="400px" alt="">
+          <img class="img-fluid" src="./Images/farm3.jpg" width="400px" alt="">
+          <img class="img-fluid" src="./Images/farm4.jpg" width="400px" alt="">
+          <img class="img-fluid" src="./Images/farm5.jpg" width="400px" alt="">
+          <img class="img-fluid" src="./Images/farm6.jpg" width="400px" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="products">
+    <div class="title">
+      <h1>Discover the Honey's</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <div class="shop-contend">
+
+            <div class="honey-box honey0">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon5.png" alt="">
+              </div>
+              <h2 class="nhoney">Ponthu Honey</h2>
+              <h6 class="pricehoney">Rs.800</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn"></ion-icon>
+            </div>
+
+            <div class="honey-box honey1">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon2.png" alt="">
+              </div>
+              <h2 class="nhoney">Wilds Honey</h2>
+              <h6 class="pricehoney">Rs.950</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn"></ion-icon>
+            </div>
+
+            <div class="honey-box honey2">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon5.png" alt="">
+              </div>
+              <h2 class="nhoney">Wildflower Honey</h2>
+              <h6 class="pricehoney">Rs.820</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn"></ion-icon>
+            </div>
+
+            <div class="honey-box honey3">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon2.png" alt="">
+              </div>
+              <h2 class="nhoney">Organic Honey</h2>
+              <h6 class="pricehoney">Rs.1000</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn"></ion-icon>
+            </div>
+
+            <div class="honey-box honey4">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon5.png" alt="">
+              </div>
+              <h2 class="nhoney">Black Honey</h2>
+              <h6 class="pricehoney">Rs.600</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn"></ion-icon>
+            </div>
+
+            <div class="honey-box honey5">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon2.png" alt="">
+              </div>
+              <h2 class="nhoney">Alfalfa Honey</h2>
+              <h6 class="pricehoney">Rs.900</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn"></ion-icon>
+            </div>
+
+            <div class="honey-box honey6">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon5.png" alt="">
+              </div>
+              <h2 class="nhoney">Clover Honey</h2>
+              <h6 class="pricehoney">Rs.950</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn"></ion-icon>
+            </div>
+
+            <div class="honey-box honey7">
+              <div class="pic">
+                <img class="img-fluid himage" src="./Images/hon2.png" alt="">
+              </div>
+              <h2 class="nhoney">Hills Honey</h2>
+              <h6 class="pricehoney">Rs.400</h6>
+              <span>Per/Kg</span>
+              <ion-icon name="cart" class="cart-btn">
+            </div>
+
+          </div>
+
+          <!-- Button trigger modal -->
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Payment Mode</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          UPI ID
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body acsbody">
+                          <label for="upi">UPI ID</label>
+                          <input type="text" id="upi" placeholder="example@okaxis..">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Debit Cards & Credit Cards
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body acsbody">
+                          <div class="form1 p-3 ">
+                            <label for="card">Card No:</label>
+                            <input type="text" id="card" placeholder="22585 8565..." class="">
+                          </div>
+                          <div class="form2">
+                            <label for="incard">Expiry Date:</label>
+                            <input type="date" id="incard" placeholder="12/26" style="width: 100px !important;">
+                            <label for="incvv">CVV</label>
+                            <input type="text" id="incvv" placeholder="389" style="width: 100px !important;">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          EMI Option
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body acsbody">
+                          <div class="form1 p-3 ">
+                            <label for="Emicard1">Card No:</label>
+                            <input type="text" id="Emicard1" placeholder="22585 8565..." class="">
+                          </div>
+                          <div class="form2">
+                            <label for="Emicard">Expiry Date:</label>
+                            <input type="date" id="Emicard" placeholder="12/26" style="width: 100px !important;">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="389" style="width: 100px !important;">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Back</button>
+                  <button type="button" class="btn btn-dark btn-pay">Pay</button>
+                </div>
+              </div>
+            </div>
+          </div>
+<!-- Toast Cart Added Successfully-->
+          <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <strong class="me-auto">Cart Alert</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body text-light ">
+                Cart Added Successfully...
+              </div>
+            </div>
+          </div>
+<!--Confetti Falling-->
+<canvas id="canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="title">
+      <h1>Contact Us</h1>
+    </div>
+    <div class="container p-3">
+      <div class="row p-3">
+        <div class="col col-lg-6 col-12">
+          <div class="address-box d-flex">
+            <div class="icon"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="address">
+              <h4>Address</h4>
+              <p>41,Camp Road, Chennai</p>
+            </div>
+          </div>
+          <div class="address-box d-flex">
+            <div class="icon"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="Email">
+              <h4>Email</h4>
+              <p>sakthishoney@gmail.com</p>
+            </div>
+          </div>
+          <div class="address-box d-flex">
+            <div class="icon"><ion-icon name="call"></ion-icon></div>
+            <div class="address">
+              <h4>Phone</h4>
+              <p>+91 7708819913</p>
+            </div>
+          </div>
+          <div class="social">
+            <ion-icon class="fas" name="logo-facebook"></ion-icon>
+            <ion-icon class="fas" name="logo-twitter"></ion-icon>
+            <ion-icon class="fas" name="logo-whatsapp"></ion-icon>
+          </div>
+          <div class="maps">
+            <h6 class="text-light pt-2 text-decoration-underline">Find Below</h6>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.008439916364!2d80.2755252!3d13.0832022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x47ee704562150916!2sPuratchi%20Thalaivar%20Dr.%20M.G.%20Ramachandran%20Central%20Railway%20Station%20(Chennai)!5e0!3m2!1sen!2sin!4v1669274931009!5m2!1sen!2sin"
+              width="200" height="100" style="border:0; border-radius: 0.5rem;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="col col-lg-6 col-12 mt-lg-0 mt-4">
+          <div class="form-boxs">
+            <h2>Send Message</h2>
+            <div class="form-control">
+              <input type="text" name="" id="" placeholder="Full Name">
+              <input type="email" name="" id="" placeholder="Email">
+              <textarea name="" id="" cols="30" rows="2" placeholder="Type Your Message..."></textarea>
+              <button class="btn" id="btn">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer container-fluid mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col col-4">
+            <div class="links">
+              <h4>Links</h4>
+              <ul class="list-unstyled">
+                <li><a class="text-decoration-none" href="#home">Home</a></li>
+                <li><a class="text-decoration-none" href="#about">About</a></li>
+                <li><a class="text-decoration-none" href="#products">Products</a></li>
+                <li><a class="text-decoration-none" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-4">
+            <div class="links">
+              <h4>Support </h4>
+              <ul class="list-unstyled">
+                <li><a class="text-decoration-none" href="">Support Request</a></li>
+                <li><a class="text-decoration-none" href="">Social Media</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-4">
+            <div class="links">
+              <h4>About</h4>
+              <ul class="list-unstyled">
+                <li><a class="text-decoration-none" href="">Careers</a></li>
+                <li><a class="text-decoration-none" href="">Our Products</a></li>
+                <li><a class="text-decoration-none" href="">Terms</a></li>
+                <li><a class="text-decoration-none" href="">Connect</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <h5 class="text-center pt-2">&#169; copyright2022@sakthishoney.com</h5>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+  <script src="script.js">
+  </script>
+  
+
+</body>
+
+</html>
