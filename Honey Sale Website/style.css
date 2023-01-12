@@ -15,7 +15,9 @@ html{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+body{
+    position: relative;
+}
 #home{
     min-height: 100vh;
     width: 100%;
@@ -255,12 +257,17 @@ nav ul li:active{
     background: rgb(245, 234, 213);
     padding: 1rem;
     position: relative;
- 
+    height: 400px;
 }
 
 #products .container .shop-contend .honey-box .pic{
     border: 1px solid rgb(219, 109, 5);
     padding: 1rem;
+}
+
+#products .container .shop-contend .honey-box .pic img{
+    width: 200px;
+    height: 200px;
 }
 #products .container .shop-contend .honey-box .pic img:hover{
     transform: scale(1.1);
@@ -557,4 +564,47 @@ cursor: pointer;
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.cons{
+    width: 100%;
+    height: 100vh;
+    background: #010a018f;
+    position: absolute;
+    z-index: 1002;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center; 
+    visibility: hidden;
+}
+
+.cube h3{
+    font-size: 3rem;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #bc13fe,
+      0 0 82px #bc13fe,
+      0 0 92px #bc13fe;
+}
+
+.cons.activecons{
+    visibility: visible;
+    transform-origin: center;
+    animation: pay 0.5s ease-in 1;
+}
+
+@keyframes pay {
+    0%{
+        transform: scale(0);
+        
+    }
+
+    100%{
+        transform: scale(1);
+        
+    }
 }

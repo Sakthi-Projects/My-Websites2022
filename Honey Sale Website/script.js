@@ -86,6 +86,7 @@ function toastTrigger(){
   const toastTrigger = document.querySelectorAll('.cart-btn')
   const toastLiveExample = document.getElementById('liveToast')
   
+  
   toastTrigger.forEach((btn) => {
   
     if(btn) {
@@ -217,6 +218,7 @@ function placeOrder(){
 
 
 const btnpay = document.querySelector('.btn-pay')
+const overlay = document.querySelector('.cons')
 
   btnpay.addEventListener('click',()=>{
     let upi = document.querySelector('#upi').value;
@@ -228,13 +230,16 @@ const btnpay = document.querySelector('.btn-pay')
       alert("Please Choose Payment Mode");
     }else{
 
-    function removePay(){
-        btnpay.setAttribute("data-bs-dismiss","modal");
-      }
+      overlay.classList.add('activecons')
+
+      setTimeout(() => {
+        overlay.classList.remove('activecons')
+      }, 1500);
+
     }
-    removePay();
 
   });
+
 
 
   
